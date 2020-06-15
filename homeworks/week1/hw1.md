@@ -13,19 +13,16 @@
 2. 去到你賬戶下的功課，並複製 repository 的地址。
 3. 使用 `git clone repository_url` 的指令 clone 功課到指定電腦位置。
 4. 使用 `cd` 移動到功課的路徑。
-5. 你可以使用 `git branch -v` 看到你處於 `master` branch 中
-6. 你可以使用 `git status` 看到你現在你是沒有檔案需要 add 和 commit。
 
 恭喜你，你已經從遠端的 repository 中下載一份作業複製本到的主機中，你會在主機中完成作業。
 
 
-
 #### 做作業的注意事項
 1. 在開始做作業前，你需要一個新的 branch。原因是為了版本控制避免將未完成作品上載到 `master` 上。再加上你的作業是必需由助教的批改後，會由助教進行 merge branch 到 `master`。
-2. `git branch -v` 來查看你主機的 repository 有幾多個 branch。
-2. 假設我們是要做 week 1 的作業，使用 `git branch week1` 去建立一個名叫 `week1` 的 branch。用`git branch -v` 來查看 `week1` 已完成
+2. 假設我們是要做 week 1 的作業，使用 `git branch week1` 去建立一個名叫 `week1` 的 branch。
 3. 使用 `git checkout week1` 移動到 `week1` 的 branch 才可以開始寫作業。可以用 `git branch -v` 確保自己在新建立的 branch。
-4. 當你完成作業後， 使用 `git commit -am "commit msg"` 去 add 和 commit 你的所有作業到 `week1` branch 上。
+4. 如果新增了檔案，需要用 `git add .` 去加到主機的 repository。
+5. 當你完成作業後，請到 Lidemy 的 GitHub 上看自我檢討並作出適當的修改。完成修改後，使用 `git commit -am "commit msg"` 去 add 和 commit 你的所有作業到 `week1` branch 上。
 
 你已經準備好交作業了!你一直所寫的作業都只是在你主機內的，你需要將文件上載到遠端的 repository 中，助教們才可以檢查和批改你的作業。
 

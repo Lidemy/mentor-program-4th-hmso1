@@ -66,19 +66,19 @@ master 和 branch 有衝突的地方會以 `=` 分隔。`HEAD` 是 `master` 的�
 ### Push 和 Pull
 聽閒菜哥將會回老家放假，因為老家也有一部電腦，菜哥不想把自己的私人電腦攜帶回家，但他又想在老家繼續創作笑話。這個時候我會推介你使用 GitHub。 GitHub 是一個平台，所有會員都可以把自己的 repository 儲存上去。首先到 GitHub 上註冊做會員，之後按左上角的 `New`
 
-![Step1](img\001.PNG)
+![Step1](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/001.PNG?raw=true)
 
 填寫 `Repository name`、`description`。如果你想所有人都可以看到你的 repository，你可以選擇做 public，否則你可以選擇 private。
-![New](img\002.PNG)
+![Step2](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/002.PNG?raw=true)
 填寫後，你可以按 `create repository` 
 
-![Step2](img\003.PNG)
+![Step3](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/003.PNG?raw=true)
 
 因為菜哥的私人電腦已有 repo，他只需要將本地的 repo 推到遠端去。如果本機沒有，我們要在本機新增一個。確保你在 `我的笑話` 的路徑下而且確保所有檔案都已經 commit，在 Git Bash 輸入 `git remote add origin https://github.com/hmso1/-.git`，這一個步驟加一個 remote 將你本地的 repo 連接到 GitHub 上的 repo (稱為 origin)。之後使用 `git push -u origin master` 將所有在本機的 `我的笑話` 的檔案上傳到遠端 origin 的 master 主幹上。如果是有分支的話，需要 `git push -u origin 分支` 上傳分支到遠端 repo。
 
 當菜哥回到老家，安裝完 Git 後。他打開他在 GitHub 上 `我的笑話` 的 repo。點擊 `Clone or download` 並拷貝遠端 repo 的網址。
 
-![Step3](img\004.PNG)
+![Step4](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/004.PNG?raw=true)
 
 打開 Git Bash，開一個新的資料夾來儲存笑話。在新資料夾的路俓下使用 `git clone 遠端 repo 的網址` 來將遠端 repo 拷貝到本機中。記住，所有檔案的改動是在主機中的，遠端是沒有記錄的，如果想同步到遠諯的 repo 需要 `git push origin 分支或主幹名稱`。當菜哥回到自己家用返自己私人電腦時，他可以在 `我的笑話` 的資料夾下使用 `git pull origin 分支或主幹名稱` 與遠諯的 repo 同步。
 
@@ -86,27 +86,27 @@ master 和 branch 有衝突的地方會以 `=` 分隔。`HEAD` 是 `master` 的�
 其實 GitHub 都可以用來 merge branch，GitHub 內有一個 `Pull requests` 的功能記錄 merge 了什麼 branch 和文檔的變化。
 假設我們新增了一個分支叫 `joke` 並同步到了遠端的 repo 上
 
-![Step4](img\006.PNG)
+![Step5](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/006.PNG?raw=true)
 
 會看到我們有 2 個分支，點擊 `Pull requests` 進行 merge branch。
 
-![Step5](img\007.PNG)
+![Step6](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/007.PNG?raw=true)
 
 點擊 `New pull request`
 
-![Step6](img\008.PNG)
+![Step7](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/008.PNG?raw=true)
 
 選擇將那一個分支合併到 master 中，之後點選 `Create pull request`
 
-![Step7](img\009.PNG)
+![Step8](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/009.PNG?raw=true)
 
 填寫 comment 和檢查所有合併檔案都是正確後就點擊 `Create pull request`。
 
-![Step8](img\010.PNG)
+![Step9](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/010.PNG?raw=true)
 
 點擊 `Merge pull request` 和 `Confirm merge`  來合併分支。
 
-![Step9](img\011.PNG)
+![Step9](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week1/homeworks/week1/img/011.PNG?raw=true)
 
 因為合併了，分支已不需要，所以可以用 Delete branch 刪除分支。
 合併分支後，你可以將你的電腦和遠端的 repo 同步，同步後的主機 master 已經有了 branch 的資料，所有可以用 `git branch -d` 來刪除本機內的分支。

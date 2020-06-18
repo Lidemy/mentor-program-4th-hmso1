@@ -2,7 +2,6 @@
 current_number=1
 target=$(($1 + 1))
 
-
 while [ $current_number -ne $target ]
 do
     

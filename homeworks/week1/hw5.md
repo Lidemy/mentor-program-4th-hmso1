@@ -6,15 +6,15 @@
 ## 假設我今天去 Google 首頁搜尋框打上：JavaScript 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
 1. 瀏覽器會問 DNS 伺服器 google.com/search 應該怎樣走
 2. DNS 伺服器會輸出一個 IP 地址給瀏覽器
-3. 瀏覽器會發一個 request 到該 IP 址中，request 內會有使用者想搜尋的 `JavaScript`
+3. 瀏覽器會發一個 request 到該 IP 址中，request 內會有使用者想搜尋的 `JavaScript` 內容
 4. 位放 IP 地址的 Server 收到 request
 5. Server 會問有關的資料庫，查找 `JavaScript` 的關鍵字
 6. 資料庫找到後，回傳資料給 Server
-7. Server 會曾過處理（排序）後回傳 reponse 給瀏覽器
+7. Server 會曾過處理（例如：排序）後回傳 reponse 給瀏覽器
 8. 瀏覽器解析回傳的資訊並顯示出來
 
 ## 請列舉出 3 個「課程沒有提到」的 command line 指令並且說明功用
-1. `sort 文字檔.txt`：根摢英文字母去排序
+1. `sort 文字檔.txt`：根據英文字母去排序
 
 ```
 sort 前

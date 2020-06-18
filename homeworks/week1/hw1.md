@@ -6,8 +6,8 @@
 
 ### 在做作業前
 在做作業前，你必需完成以下的準備工作。
-1. 確保你已接受 [GitHuba classroom](https://classroom.github.com/a/SbDvk2) 的邀請。這個步驟會將程式導師實驗計畫第四期的作業拷貝到你 GitHub 賬戶下，使每名學生都會有一份獨立的作業。
-2. 去到你賬戶下的功課，並複製 repository 的地址。
+1. 確保你已接受 [GitHuba classroom](https://classroom.github.com/a/SbDvk2) 的邀請。這個步驟會將程式導師實驗計畫第四期的作業拷貝一份到你 GitHub 賬戶下，使每名學生都會有一份獨立的作業。
+2. 去到你賬戶作業的網頁，並複製 repository 的地址。
 3. 使用 `git clone repository_url` 的指令 clone 功課到指定電腦位置。
 4. 使用 `cd` 移動到功課的路徑。
 
@@ -15,7 +15,7 @@
 
 
 ### 做作業的注意事項
-1. 在開始做作業前，你需要一個新的 branch。原因是為了版本控制避免將未完成作品上載到 `master` 上。再加上你的作業是必需由助教的批改後，會由助教進行 merge branch 到 `master`。
+1. 在開始做作業前，你需要一個新的 branch。原因是為了版本控制避免將未完成作品影響到 `master` 上。再加上你的作業是必需由助教的批改後，會由助教進行 merge branch 到 `master`。
 2. 假設我們是要做 week 1 的作業，使用 `git branch week1` 去建立一個名叫 `week1` 的 branch。
 3. 使用 `git checkout week1` 移動到 `week1` 的 branch 才可以開始寫作業。可以用 `git branch -v` 確保自己在新建立的 branch。
 4. 如果新增了檔案，需要用 `git add .` 去加到主機的 repository。
@@ -39,4 +39,3 @@
 2. 使用 `git checkout master` 移動到 `master` branch 上。
 3. 使用 `git pull https://github.com/Lidemy/mentor-program-4th master` 去同步第四期的 `master` 與你主機的 `master`
 4. 完成主機的同步後，注意你的遠端 `master` 是未更新的。你需要用 `git push origin master` 將你主機的 `master` （內容等於第四期的 `master`）和遠端 `master` 同步。
-

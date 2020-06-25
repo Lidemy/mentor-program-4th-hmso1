@@ -9,3 +9,6 @@ function reverse(str) {
 }
 
 reverse('hello');
+reverse('yoyoyo')
+reverse('1abc2')
+reverse('1,2,3,2,1')

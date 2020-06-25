@@ -20,4 +20,7 @@ function repeat(str, times) {
 
 console.log(join(["a"], ','));
 console.log(repeat('yoyo', 2));
+console.log(join([1, 2, 3], ''))
+console.log(join(["a", "b", "c"], "!"))
+console.log(join(["aaa", "bb", "c", "dddd"], ',,'))
 

@@ -6,4 +6,5 @@ function printFactor(n) {
   }
 }
 
+printFactor(10)
 printFactor(7);

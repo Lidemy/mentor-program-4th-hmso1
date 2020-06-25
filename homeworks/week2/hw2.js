@@ -21,4 +21,4 @@ function capitalize(str) {
     return result
 }
 
-console.log(capitalize('nick'));
+console.log(capitalize(',nick'));

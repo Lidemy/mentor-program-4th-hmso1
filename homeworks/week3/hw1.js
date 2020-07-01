@@ -1,4 +1,16 @@
-/* eslint-disable no-plusplus */
+/* eslint-disable no-plusplus, prefer-const */
+
+const readline = require('readline');
+
+let lines = [];
+let rl = readline.createInterface({
+  input: process.stdin,
+});
+
+rl.on('line', (line) => {
+  lines.push(line);
+});
+
 function repeat(n) {
   let ouput = '';
   for (let i = 0; i < n; i++) {
@@ -7,17 +19,18 @@ function repeat(n) {
   return ouput;
 }
 
-function star(n) {
+function solve(input) {
   let result = '';
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= input[0]; i++) {
     result += repeat(i);
 
-    if (i !== n) {
+    if (i !== Number(input[0])) {
       result += '\n';
     }
   }
-  return result;
+  console.log(result);
 }
-module.exports = star;
 
-console.log(star(5));
+rl.on('close', () => {
+  solve(lines);
+});

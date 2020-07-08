@@ -1,4 +1,4 @@
-/* eslint-disable no-plusplus, quotes, quote-props */
+/* eslint-disable no-plusplus, quotes, quote-props, no-unused-expressions */
 const request = require('request');
 const process = require('process');
 
@@ -70,8 +70,6 @@ function patchBook(n, bkName) {
       form: {
         name: bkName,
       },
-    }, (error, response, body) => {
-      console.log(body);
     },
   );
 }
@@ -81,16 +79,23 @@ switch (action) {
     get20BookList();
     break;
   case 'read':
-    getBookId(process.argv[3]);
+    (process.argv[3] === undefined) ? console.log('Please provide ID.') : getBookId(process.argv[3]);
     break;
   case 'delete':
-    deleteBookId(process.argv[3]);
+    (process.argv[3] === undefined) ? console.log('Please provide ID.') : deleteBookId(process.argv[3]);
     break;
   case 'create':
-    createBook(process.argv[3]);
+    (process.argv[3] === undefined) ? console.log('Please provide book name.') : createBook(process.argv[3]);
     break;
+
   case 'update':
-    patchBook(process.argv[3], process.argv[4]);
+    if (process.argv[3] === undefined) {
+      console.log('Please provide ID.');
+    } else if (process.argv[4] === undefined) {
+      console.log('Please provide the new book name.');
+    } else {
+      patchBook(process.argv[3], process.argv[4]);
+    }
     break;
   default:
     console.log('Wrong input');

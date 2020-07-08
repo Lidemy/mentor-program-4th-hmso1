@@ -31,22 +31,49 @@ function getBookId(n) {
 }
 
 function createBook(n) {
+  /*
   request(
     'https://lidemy-book-store.herokuapp.com/books/',
     (error, response, body) => {
-      const num = JSON.parse(body).length;
-
+      // const json = JSON.parse(body)
+      // const objLen = json.length;
+      // const lastID = json[objLen-1].id
+      // const newID = (lastID >= objLen) ? lastID + 1 : objLen + 1
       request.post({
         url: 'https://lidemy-book-store.herokuapp.com/books/',
         json: true,
-        body: { "id": num, "name": n },
+        body: {"id": newID, "name": n },
       });
+    },
+  );
+  */
+  request.post(
+    {
+      url: 'https://lidemy-book-store.herokuapp.com/books/',
+      form: {
+        name: n,
+      },
+    }, (error, response, body) => {
+      console.log(body);
     },
   );
 }
 
 function deleteBookId(n) {
   request.del(`https://lidemy-book-store.herokuapp.com/books/${n}`);
+}
+
+function patchBook(n, bkName) {
+  request.patch(
+    {
+      url: `https://lidemy-book-store.herokuapp.com/books/${n}`,
+      form: {
+        name: bkName,
+      },
+    }, (error, response, body) => {
+      console.log(body);
+    },
+  );
 }
 
 switch (action) {
@@ -63,7 +90,7 @@ switch (action) {
     createBook(process.argv[3]);
     break;
   case 'update':
-    // patchBook(process.argv[3], process.argv[4])
+    patchBook(process.argv[3], process.argv[4]);
     break;
   default:
     console.log('Wrong input');

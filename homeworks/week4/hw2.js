@@ -4,11 +4,30 @@ const process = require('process');
 
 const action = process.argv[2].toLowerCase();
 
+function checkStatusCode(code) {
+  if (!(code > 199 && code < 300)) {
+    console.log(`失敗，請查看以下 Status Code: ${code}`);
+    return false;
+  }
+  return true;
+}
+
+function checkJsonBody(body) {
+  try {
+    return JSON.parse(body);
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
 function get20BookList() {
   request(
     'https://lidemy-book-store.herokuapp.com/books?_limit=20',
     (error, response, body) => {
-      const json = JSON.parse(body);
+      if (checkStatusCode(response.statusCode) === false) return;
+      const json = checkJsonBody(body);
+
       for (let i = 0; i < json.length; i++) {
         console.log(`${json[i].id} ${json[i].name}`);
       }
@@ -20,6 +39,7 @@ function getBookId(n) {
   request(
     `https://lidemy-book-store.herokuapp.com/books/${n}`,
     (error, response, body) => {
+      if (checkStatusCode(response.statusCode) === false) return;
       const json = JSON.parse(body);
       if (json.name === undefined) {
         console.log('No this book in the API, please try another ID');
@@ -54,6 +74,7 @@ function createBook(n) {
         name: n,
       },
     }, (error, response, body) => {
+      if (checkStatusCode(response.statusCode) === false) return;
       console.log(body);
     },
   );

@@ -17,7 +17,21 @@ function printInfo(s) {
 request(
   `https://restcountries.eu/rest/v2/name/${process.argv[2]}`,
   (error, response, body) => {
-    const json = JSON.parse(body);
-    (json.status === 404) ? console.log('找不到國家資訊') : printInfo(json);
+    let json;
+
+    try {
+      json = JSON.parse(body);
+    } catch (err) {
+      console.log(err);
+      return;
+    }
+
+    if (json.status === undefined) {
+      printInfo(json);
+    } else if (json.status === 404) {
+      console.log('找不到國家資訊');
+    } else {
+      console.log(`失敗，請查看以下 Status Code: ${json.status}`);
+    }
   },
 );

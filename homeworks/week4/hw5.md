@@ -19,3 +19,10 @@ API 有不同的種類：作業系統 API，裝置 API，Web API。作業系統 
 
 ## 假設你現在是個餐廳平台，需要提供 API 給別人串接並提供基本的 CRUD 功能，包括：回傳所有餐廳資料、回傳單一餐廳資料、刪除餐廳、新增餐廳、更改餐廳，你的 API 會長什麼樣子？請提供一份 API 文件。
 
+| 說明     | Method | path       | 參數                   | 範例             |
+|--------|--------|--------------|-----------------------|----------------|
+| 回傳所有餐廳資料 | GET    | /restaurants   |無          |無            |
+| 回傳單一餐廳資料 | GET    | /restaurants/:id | 無                   | /restaurants/1      |
+| 刪除餐廳  | DELECT   | /restaurants/:id   | 無 | restaurants/1             |
+| 新增餐廳   | POST   | /restaurants     | name: 餐廳名 <br> open: 営業時間 <br> dishes: 菜式 <br> rank: 星級 (5 星最高, 1星最低) | 無              |
+| 更改餐廳   | PATCH   | /restaurants/:id     | name: 餐廳名 <br> open: 営業時間 <br> dishes: 菜式 <br> rank: 星級 (5 星最高, 1星最低) | restaurants/1              |

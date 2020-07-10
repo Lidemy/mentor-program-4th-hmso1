@@ -10,7 +10,18 @@ const option = {
 };
 
 function callback(error, respones, body) {
-  const json = JSON.parse(body);
+  let json;
+  try {
+    json = JSON.parse(body);
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+
+  if (json.status !== undefined) {
+    console.log(`Status Code: ${json.status} ${json.error}`);
+    return;
+  }
   for (let i = 0; i < json.top.length; i++) {
     console.log(`${json.top[i].viewers} ${json.top[i].game.name}`);
   }

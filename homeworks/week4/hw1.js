@@ -2,7 +2,7 @@
 const request = require('request');
 
 request(
-  'https://lidemy-book-store.herkouapp.com/books?_limit=10',
+  'https://lidemy-book-store.herokuapp.com/books?_limit=10',
   (error, response, body) => {
     if (response.statusCode === 404) {
       console.log('網頁不存在');

@@ -4,7 +4,7 @@ const process = require('process');
 
 const action = process.argv[2].toLowerCase();
 
-function checkStatusCode(code) {
+function isStatusCodeFail(code) {
   if (!(code > 199 && code < 300)) {
     console.log(`失敗，請查看以下 Status Code: ${code}`);
     return false;
@@ -12,7 +12,7 @@ function checkStatusCode(code) {
   return true;
 }
 
-function checkJsonBody(body) {
+function isJsonBody(body) {
   try {
     return JSON.parse(body);
   } catch (err) {
@@ -25,8 +25,9 @@ function get20BookList() {
   request(
     'https://lidemy-book-store.herokuapp.com/books?_limit=20',
     (error, response, body) => {
-      if (checkStatusCode(response.statusCode) === false) return;
-      const json = checkJsonBody(body);
+      if (isStatusCodeFail(response.statusCode) === false) return;
+      if (isJsonBody(body) === false) return;
+      const json = JSON.parse(body);
 
       for (let i = 0; i < json.length; i++) {
         console.log(`${json[i].id} ${json[i].name}`);
@@ -39,7 +40,10 @@ function getBookId(n) {
   request(
     `https://lidemy-book-store.herokuapp.com/books/${n}`,
     (error, response, body) => {
-      if (checkStatusCode(response.statusCode) === false) return;
+      if (isStatusCodeFail(response.statusCode) === false) return;
+
+      if (isJsonBody(body) === false) return;
+
       const json = JSON.parse(body);
       if (json.name === undefined) {
         console.log('No this book in the API, please try another ID');
@@ -51,14 +55,13 @@ function getBookId(n) {
 }
 
 function createBook(n) {
+  // 本身以為 post 一定要有 id 作為參數，所以寫了以下的 coding 決定傳入 id 的數字是什麼，但之後發現會自動派 id。
   /*
   request(
     'https://lidemy-book-store.herokuapp.com/books/',
     (error, response, body) => {
       // const json = JSON.parse(body)
-      // const objLen = json.length;
-      // const lastID = json[objLen-1].id
-      // const newID = (lastID >= objLen) ? lastID + 1 : objLen + 1
+      // const newID = json[json.length-1].id + 1
       request.post({
         url: 'https://lidemy-book-store.herokuapp.com/books/',
         json: true,
@@ -67,6 +70,7 @@ function createBook(n) {
     },
   );
   */
+
   request.post(
     {
       url: 'https://lidemy-book-store.herokuapp.com/books/',
@@ -74,14 +78,18 @@ function createBook(n) {
         name: n,
       },
     }, (error, response, body) => {
-      if (checkStatusCode(response.statusCode) === false) return;
+      if (isStatusCodeFail(response.statusCode) === false) return;
       console.log(body);
     },
   );
 }
 
 function deleteBookId(n) {
-  request.del(`https://lidemy-book-store.herokuapp.com/books/${n}`);
+  request.del(`https://lidemy-book-store.herokuapp.com/books/${n}`, (error, response) => {
+    if (isStatusCodeFail(response.statusCode) !== false) {
+      console.log('Successful');
+    }
+  });
 }
 
 function patchBook(n, bkName) {
@@ -91,6 +99,9 @@ function patchBook(n, bkName) {
       form: {
         name: bkName,
       },
+    }, (error, response, body) => {
+      if (isStatusCodeFail(response.statusCode) === false) return;
+      console.log(body);
     },
   );
 }
@@ -108,7 +119,6 @@ switch (action) {
   case 'create':
     (process.argv[3] === undefined) ? console.log('Please provide book name.') : createBook(process.argv[3]);
     break;
-
   case 'update':
     if (process.argv[3] === undefined) {
       console.log('Please provide ID.');

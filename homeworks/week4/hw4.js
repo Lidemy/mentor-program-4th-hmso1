@@ -25,6 +25,12 @@ function callback(error, respones, body) {
   for (let i = 0; i < json.top.length; i++) {
     console.log(`${json.top[i].viewers} ${json.top[i].game.name}`);
   }
+
+  /*
+  const {top: [first]} = json
+  const {game: {name}} = first
+  console.log(name)
+  */
 }
 
 request(option, callback);

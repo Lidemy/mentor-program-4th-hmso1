@@ -30,7 +30,6 @@
   "homepage": "https://github.com/Lidemy/mentor-program-4th#readme",
   "dependencies": {
     "jest": "^26.1.0",
-    "js-base64": "^2.6.3",
     "request": "^2.88.2"
   },
   "devDependencies": {

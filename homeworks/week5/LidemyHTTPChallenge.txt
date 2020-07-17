@@ -1,6 +1,6 @@
 /* eslint-diable*/
 const request = require('request');
-const Base64 = require('js-base64').Base64
+// const Base64 = require('js-base64').Base64
 
 //Lv1. token={GOGOGO}; /lv1?token={GOGOGO}&name=iris
 //Lv2. token={HellOWOrld}; lv2?token={HellOWOrld}&id=56
@@ -150,3 +150,37 @@ request('https://lidemy-http-challenge.herokuapp.com/api/v3/deliver_token'
 */
 
 //Lv. 13 token={qspyz}
+
+// const options2 = {   
+//     url : `https://lidemy-http-challenge.herokuapp.com/api/v3/logs`,
+//     headers:{
+//       'X-Forwarded-For': '45.253.88.0'
+//     },
+//   }
+  
+//   const callback2 = (error, response, body) => {
+//     console.log(body);
+//   }
+  
+// request(options2, callback2)
+// X-Forwarded-For 是 proxy 那題的解答嗎？
+
+// 是弄巧成拙XD 我自己預設的解答是找菲律賓 proxy 來 call API，但 X-Forwarded-For 偽造 IP 也可以過
+// 我覺得滿有趣的，就留下來沒擋了
+
+//Lv. 14 token={SEOisHard}
+
+const options2 = {   
+    url : `https://lidemy-http-challenge.herokuapp.com/api/v3/index`,
+    headers:{
+      'User-Agent': 'Googlebot-News',
+    },
+  }
+  
+  const callback2 = (error, response, body) => {
+    console.log(body);
+  }
+  
+request(options2, callback2)
+//https://support.google.com/webmasters/answer/1061943
+//Lv.15 token={ILOVELIdemy!!!}

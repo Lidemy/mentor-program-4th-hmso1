@@ -1,0 +1,186 @@
+/* eslint-diable*/
+const request = require('request');
+// const Base64 = require('js-base64').Base64
+
+//Lv1. token={GOGOGO}; /lv1?token={GOGOGO}&name=iris
+//Lv2. token={HellOWOrld}; lv2?token={HellOWOrld}&id=56
+
+/*
+Lv.3 token={5566NO1}; lv3?token={5566NO1}&id=1989
+
+request.post(
+  {
+    url: 'https://lidemy-http-challenge.herokuapp.com/api/books',
+    form: {
+      name: '《大腦喜歡這樣學》',
+      ISBN: 9789863594475
+    },
+  }, (error, response, body) => {
+    console.log(body);
+  },
+);
+
+//OR
+
+curl -X POST --data "name=《大腦喜歡這樣學》&ISBN=9789863594475" https://lidemy-http-challenge.herokuapp.com/api/books
+*/
+
+/*
+//Lv.4 token={LEarnHOWtoLeArn}; lv4?token={LEarnHOWtoLeArn}&id=79
+request(
+  encodeURI(`https://lidemy-http-challenge.herokuapp.com/api/books/?q=世界`), (e, r, b) => {
+    console.log(b)
+  }
+)
+*/
+
+/*
+//Lv.5 token={HarukiMurakami}; 
+request.delete(`https://lidemy-http-challenge.herokuapp.com/api/books/23`, (e, r, b) => {
+  console.log(e)
+  console.log(r)
+  console.log(b)
+})
+
+//OR
+curl -X DELETE "https://lidemy-http-challenge.herokuapp.com/api/books/23"
+*/
+
+
+//Lv.6 token={CHICKENCUTLET}; lv6?token={CHICKENCUTLET}&email=lib@lidemy.com
+/*
+const auth = Base64.encode('admin:admin123')
+request(
+  {
+    url: `https://lidemy-http-challenge.herokuapp.com/api/v2/me`, 
+    headers:{Authorization: `Basic ${auth}`}
+  }, (e, r, b) => {
+    console.log(e)
+    console.log(r)
+    console.log(b)
+  }
+)
+curl --user admin:admin123 https://lidemy-http-challenge.herokuapp.com/api/v2/me
+*/
+
+//Lv.7  token={SECurityIsImPORTant}
+/*
+const auth = Base64.encode('admin:admin123')
+request.delete({
+  url: `https://lidemy-http-challenge.herokuapp.com/api/v2/books/89`, 
+  headers:{Authorization: `Basic ${auth}`}
+}, (e, r, b) => {
+  console.log(e)
+  console.log(r)
+  console.log(b)
+})
+
+//OR
+curl --user admin:admin123 -X DELETE https://lidemy-http-challenge.herokuapp.com/api/v2/books/89
+*/
+
+//Lv.8 token={HsifnAerok}
+// https://gist.github.com/aszx87410/1e5e5105c1c35197f55c485a88b0328a
+/*
+const auth = Base64.encode('admin:admin123')
+request({
+  url: encodeURI(`https://lidemy-http-challenge.herokuapp.com/api/v2/books/?q=我`),
+  headers:{Authorization: `Basic ${auth}`}
+}
+  , (e, r, b) => {
+    console.log(b)
+  }
+)
+
+//{"id":72,"name":"日日好日：茶道教我的幸福15味【電影書腰版】","author":"森下典子","ISBN":"9981835427"}
+
+request.patch({
+  url: encodeURI(`https://lidemy-http-challenge.herokuapp.com/api/v2/books/72`),
+  headers:{Authorization: `Basic ${auth}`},
+  form: {
+    name: '日日好日：茶道教我的幸福15味【電影書腰版】',
+    ISBN: 9981835423
+  }
+}
+  , (e, r, b) => {
+    console.log(b)
+  }
+)
+*/
+
+//Lv.9 token={NeuN}
+/*
+const auth = Base64.encode('admin:admin123')
+request({
+  url: 'https://lidemy-http-challenge.herokuapp.com/api/v2/sys_info',
+  headers:{
+    Authorization: `Basic ${auth}`,
+    'X-Library-Number': 20, 
+    'User-Agent': 'Mozilla/5.0 (Windows; U; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)'
+  }
+}
+  , (e, r, b) => {
+    console.log(b)
+  }
+)
+//{"message":"success","version":"1A4938Jl7","owner":"lib","createdAt":"121290329301"}
+*/
+
+//Lv.10 token={duZDsG3tvoA};/lv10?token={duZDsG3tvoA}&num=9613
+
+//Lv.11 token={IhateCORS}
+/*
+request( {
+  url: 'https://lidemy-http-challenge.herokuapp.com/api/v3/hello',
+  headers:{origin: 'lidemy.com'}
+}
+  , (e, r, b) => {
+    console.log(r)
+  }
+)
+*/
+
+//Lv. 12 token={r3d1r3c7}
+/*
+request('https://lidemy-http-challenge.herokuapp.com/api/v3/deliver_token'
+  , (e, r, b) => {
+    console.log(r)
+  }
+)
+*/
+
+//Lv. 13 token={qspyz}
+
+// const options2 = {   
+//     url : `https://lidemy-http-challenge.herokuapp.com/api/v3/logs`,
+//     headers:{
+//       'X-Forwarded-For': '45.253.88.0'
+//     },
+//   }
+  
+//   const callback2 = (error, response, body) => {
+//     console.log(body);
+//   }
+  
+// request(options2, callback2)
+// X-Forwarded-For 是 proxy 那題的解答嗎？
+
+// 是弄巧成拙XD 我自己預設的解答是找菲律賓 proxy 來 call API，但 X-Forwarded-For 偽造 IP 也可以過
+// 我覺得滿有趣的，就留下來沒擋了
+
+//Lv. 14 token={SEOisHard}
+
+const options2 = {   
+    url : `https://lidemy-http-challenge.herokuapp.com/api/v3/index`,
+    headers:{
+      'User-Agent': 'Googlebot-News',
+    },
+  }
+  
+  const callback2 = (error, response, body) => {
+    console.log(body);
+  }
+  
+request(options2, callback2)
+//https://support.google.com/webmasters/answer/1061943
+//Lv.15 token={ILOVELIdemy!!!}

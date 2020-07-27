@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <style>
     .navbar {
+      background-color: white;
       box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
     }
     .navbar .wrapper {
       display: flex;
@@ -54,10 +58,11 @@
     .wrapper {
       max-width: 1280px;
       margin: 0 auto;
+      padding: 0px 12px;
     }
 
     .banner {
-      height: 450px;
+      height: 580px;
       background: url(bg.jpg) center/cover no-repeat;
       position: relative;
     }
@@ -83,9 +88,59 @@
       left: 0;
       right: 0;
       bottom: 0;
-
+    }
+    h2 {
+      margin: 0;
     }
 
+    .section {
+      text-align: center;
+    }
+    .section__title {
+      display: inline-block;
+      font-size: 36px;
+      border-left: 15px solid #a3dea2;
+      margin-top: 80px;
+      padding-left: 16px;
+      margin-bottom: 36px;
+    }
+
+    .section__desc {
+      font-size: 16px;
+      line-height: 2em;
+      margin: 0px 0px 68px 0px;
+    }
+    .button {
+      padding: 60px 80px;
+      font-size: 36px;
+      color: #3e613d;
+      display: inline-block;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+    .btn-order {
+      background-color: #a8e8e1;
+    }
+    .btn-query {
+      background-color: #f9f9b5;
+      margin-left: 23px;
+    }
+
+    .section__images {
+      display: flex;
+    }
+    .section__images div {
+      width: 25%;
+    }
+
+    .section__images img {
+      width: 100%;
+    }
 
     @media (max-width: 768px) {
       .navbar .wrapper {
@@ -109,6 +164,19 @@
       .navbar__site_name {
         margin-top: 10px;
       }
+
+      .btn-query {
+        margin-left: 0;
+        margin-top: 16px;
+      }
+
+      .section__images {
+        flex-direction: column;
+      }
+
+      .section__images div {
+        width: 100%;
+      }
     }
 
   </style>
@@ -131,5 +199,37 @@
     <h1>咬一口廚房</h1>
   </section>
 
+  <div class="wrapper">
+    <section class="section">
+      <h2 class="section__title">
+        當輕食之風盛起
+      </h2>
+      <p class="section__desc">
+        由於現代人生活忙碌，常以外食為主，當高糖、高鹽、高油成為人們的日常，會導致慢性疾病與肥胖的機率大增。
+        <br>
+        我們定期走訪農田，選用最天然、營養的食材，以簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味。
+        <br>
+        咬一口不只賣餐點，我們希望能夠讓大家愛上料理的魅力，餐館特意打造全開放式廚房，烹調透明化，也不定時舉辦美食廚房DIY，讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感。
+      </p>
+      <div class="buttons">
+        <div class="button btn-order">我要點餐</div>
+        <div class="button btn-query">查詢訂單</div>
+      </div>
+    </section>
+  </div>
+  <section class="section">
+    <h2 class="section__title">
+      Menu 搶先看
+    </h2>
+    <div class="section__images">
+      <div><img src="f-001.png" alt=""></div>
+      <div><img src="f-002.png" alt=""></div>
+      <div><img src="f-003.png" alt=""></div>
+      <div><img src="f-004.png" alt=""></div>
+    </div>
+  </section>
+  
+
+  
 </body>
 </html>

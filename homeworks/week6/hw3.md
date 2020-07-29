@@ -32,10 +32,10 @@
     </tbody>
 </table>
 ```
-![table]()
+![table](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week6/homeworks/week6/hw3-table.PNG)
 
 ## 請問什麼是盒模型（box model）
-![box-model]()
+![box-model](https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week6/homeworks/week6/hw3-box-model.PNG)
 
 所有的 HTML 元素都有自己的 box model，box model 決定了元素的高寛。box model 由 margin, border, paading 和 content 所組成。
 

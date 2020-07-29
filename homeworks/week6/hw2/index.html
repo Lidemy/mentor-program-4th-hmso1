@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的表單</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <style>
+
+    body {
+      background-color: rgba(0, 0, 0, 0.1);
+      font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif ;
+    }
+
+    .wrapper {
+      max-width: 645px;
+      margin: 0 auto;
+      padding: 0px 15px;
+    }
+
+    .wrapper header {
+      background: #fad312;
+      margin-top: 121px;
+      height: 8px;
+    }
+
+    .section {
+      padding: 55px 42px 0px 42px;
+      background-color: #fff;
+    }
+    .section h2 {
+      padding: 0;
+      margin: 0;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .section h2+p {
+      margin: 0;
+      padding-top: 35px;
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+    .section p+p {
+      margin-top: 22px;
+      color: #e74149;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    .question {
+      margin-bottom: 50px;
+    }
+    .question label, .register_type{
+      margin-top: 0;
+      display: inline-block;
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    .question span{
+      color: #e74149;
+      font-size: 20px;
+    }
+    .radio_btn label{
+      font-size: 14px;
+      margin-bottom: 23px;
+      margin-left: 9px;
+    }
+    .question .other {
+      margin-bottom: 0px;
+    }
+    .question label+p {
+      margin: 12px 0px 24px 0px;
+    }
+
+    .sub_btn {
+      padding: 0;
+      background-color: #fad312;
+      width: 92px;
+      height: 40px;
+      border: 1px solid #fad312;
+      border-radius: 3px;
+      text-align: center;
+    }
+    .end{
+      padding-top: 21px;
+      padding-bottom: 35px;
+    }
+    .end p {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer {
+      height: 60px;
+      margin-top: 66px;
+      background-color: #000000;
+    }
+
+    .footer_bottom {
+      font-size: 13px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 60px;
+      color: #999999;
+    }
+
+    .body {
+      box-shadow: 1.8px 2.4px 5px 0px rgba(0, 0, 0, 0.3);
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="wrapper">
+    <header>
+    </header>
+    
+    <div class="body">
+      <section class="section"> 
+        <h2>新拖延運動報名表單</h2>
+        <p>活動日期：2020/12/10 ~ 2020/12/11</br>活動地點：台北市大安區新生南路二段1號</p>
+        <p>*必填</p>
+      </section>
+      
+      <section class="section">
+        <form action="">
+          <div class="question">
+            <label for="name">暱稱 <span>*</span></label><br>
+            <input type="text" name="name" id="name" placeholder="您的回答"><br>
+          </div>
+          <div class="question">
+            <label for="email">電子郵件 <span>*</span></label><br>
+            <input type="email" name="email" id="email" placeholder="您的電子郵件"><br>
+          </div>
+          <div class="question">
+            <label for="mobile">手機號碼 <span>*</span></label><br>
+            <input type="text" name="mobile" id="mobile" placeholder="您的手機號碼"><br>
+          </div>
+          <div class="question radio_btn">
+            <p class="register_type">報名類型 <span>*</span></p> <br>
+            <input type="radio" id="bed" name="register_type" value="bed">
+            <label for="bed">躺在床上用想像力實作</label><br>
+            <input type="radio" id="floor" name="register_type" value="floor">
+            <label for="floor"> 趴在地上滑手機找現成的</label><br>
+          </div>
+          <div class="question">
+            <label for="where">怎麼知道這個活動的？ <span>*</span></label><br>
+            <input type="text" name="where" id="where" placeholder="您的回答"><br>
+          </div>
+          <div class="question">
+            <label for="other" class="other">其他</label>
+            <p>對活動的一些建議</p>
+            <input type="text" name="other" id="other" placeholder="您的回答"><br>
+          </div>
+          <input type="submit" value="提交" class="sub_btn">
+        </form>
+      </section>
+      
+      <section class="section end">
+        <p>請勿透過表單送出您的密碼。</p>
+      </section>
+    </div>
+  </div>
+    
+  <footer>
+    <div class="footer_bottom">
+      © 2020 © Copyright. All rights Reserved.
+    </div>
+  </footer>
+    
+    
+    
+  </body>
+</html>

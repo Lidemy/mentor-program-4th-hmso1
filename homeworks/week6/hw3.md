@@ -48,17 +48,17 @@
 
 
 ## 請問 display: inline, block 跟 inline-block 的差別是什麼？
-inline: 不可以設定寛高，寛高是根據元素內的 content 來決定。雖然可以以左右 padding 來加大元素的整體寛度，但 padding 不會改變元素高度。 可以和其他非 block 的元素並列同一行。當你的元素排版只需要並排在同一行，高度不重要時就可以用到 inline。
+inline: 不可以設定寛高，寛高是根據元素內的 content 來決定。雖然可以用左右 padding 來加大元素的寛度，但 padding 不能改變元素高度。 可以和其他非 block 的元素並列同一行。當你的元素排版只需要並排在同一行，高度不重要時就可以用到 inline。
 
 block: 元素的寛高可以自訂，但不能和其他元素並列同一行。當你想元素獨佔一列就可以設定為 display: block。
 
-inline-block: 有了 inline 的元素並列同一行和 block 的元素可以自訂寛高的特性。當你想元素可以像 inline 並列一行同可以設定寛高就會用到 inline-block。
+inline-block: 有了 inline 的並列同一行和 block 的自訂寛高的特性。當你想元素可以像 inline 並列一行同設定寛高就會用到 inline-block。
 
 ## 請問 position: static, relative, absolute 跟 fixed 的差別是什麼？
 static: postition 的預設值，元素位置會根據瀏覽器預設的配置自動排版在頁面上。
 
-relative: 以本身元素排版位置作定位點，可以根據定位點偏移元素。不論有沒有設定偏移，元素本身的位置和空間沒有改變。設定了 position:relative 的元素可以用 z-index 來決定排版前後，數字越大，就會在上層。可以用與兩個物件的位置交換。
+relative: 以本身元素排版位置作定位點，可以根據定位點偏移元素。不論有沒有設定偏移，元素本身的位置和空間沒有改變。設定了 position:relative 的元素可以用 z-index 來決定排版前後，數字越大，就會在上層。可應用與兩個物件的位置交換。
 
-absolute: 設定了 position: absolute 的元素會向上層不是 static 的元素作定位點。與 relative 不同，元素本身的的位置和空間會好似向上一層移動，在本身元素下的物件會替補 absolute 元素的位置和空間。如果元素向上找不到不是 static 的元素，會以瀏覽器為定位點，但同fixed 不同，它是不會跟着瀏覽器的移動。當元素不需要和其他物件一齊並列就可以用到。
+absolute: 設定了 position: absolute 的元素會尋找上層不是 static 的元素作定位點。與 relative 不同，元素本身的的位置和空間會好似移動到上一層，在本身元素下的物件會替補 absolute 元素的位置和空間。如果元素向上找不到不是 static 的元素，會以瀏覽器為定位點，但同fixed 不同，它是不會跟着瀏覽器移動。當元素不需要和其他物件一齊並列就可以用到。
 
-fixed: 以瀏覽器視窗為定位點，當瀏覽器上下捲動，元素會跟着移動。十分常用於網頁中的廣告。
+fixed: 以瀏覽器視窗為定位點，當瀏覽器上下捲動，元素會跟着移動。十分常用於網頁廣告。

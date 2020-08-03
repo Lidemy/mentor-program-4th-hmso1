@@ -1,0 +1,104 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif ;
+  }
+
+.wrapper {
+    background: white;
+    width: 645px;
+    margin: 0 auto;
+    margin-top: 121px;
+    margin-bottom: 66px;
+    border-top: 8px solid #fad312;
+    box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+form {
+    margin-left: 42px;
+    margin-top: 54px;
+}
+
+.form-title {
+    font-size: 36px;
+    margin-bottom: 35px;
+}
+
+.form-desc {
+    font-size: 14px;
+}
+
+.fd-two {
+    margin-top: 11px;
+    margin-bottom: 22px;
+}
+
+.form-required {
+    font-size: 16px;
+    color: #e74149;
+    margin-bottom: 55px;
+}
+
+label, .register-type {
+    font-size: 20px;
+    display: block;
+    margin-top: 50px;
+}
+.require::after {
+    content:"*";
+    color: #e74149;
+}
+input[type="text"] {
+    width: 287px;
+    height: 23px;
+    margin-top: 20px;
+    padding: 5px 1px 3px 1px;
+    border: 1px solid #d0d0d0;
+    font-size: 16px;
+    display: block;
+}
+
+.other-remark {
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.radio-btn {
+    font-size: 14px;
+    display: block;
+    margin: 24px 0px;
+}
+
+.submit-btn {
+    margin-top: 55px;
+    width: 92px;
+    height: 40px;
+    background-color: #fad312;
+    border-radius: 3px;
+    border: 1px solid #fad312;
+    font-size: 15px;
+
+}
+
+.form-remark {
+    margin-top: 21px;
+    padding-bottom: 35px;
+}
+
+footer {
+    background: #000;
+    line-height: 60px;
+    color: #999999;
+    text-align: center;
+    font-size: 13px;
+}
+
+.warning {
+    margin-top: 10px;
+    color: red;
+}

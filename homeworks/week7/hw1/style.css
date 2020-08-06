@@ -43,7 +43,7 @@ form {
     margin-bottom: 55px;
 }
 
-label, .register-type {
+label, .radio-input {
     font-size: 20px;
     display: block;
     margin-top: 50px;
@@ -101,4 +101,5 @@ footer {
 .warning {
     margin-top: 10px;
     color: red;
+    display: none;
 }

@@ -13,16 +13,17 @@
     <div class="list-input">
       <h1>TO-DO List</h1>
       <form action="">
-        <input type="text" id="todo-work" placeholder="Please enter what U wanna do ~ ~">
+        <input type="text" id="todo-work" placeholder="待辦清單 ~ ~">
         <input type="submit" id="todo-sub" value="ADD">
       </form>
     </div>
 
+
     <div class="list-contents">
       <div class="list-item">
         <div class="item-top">
           <div class="item-left">
-            <input type="checkbox" name="box1"><label for="box1">寫作業</label>
+            <input type="checkbox" name="box1" id="checkbox"><label for="box1">寫作業</label>
           </div>
           <div class="item-right">
             <input type="button" value="Delete">
@@ -81,7 +82,25 @@
         </div>
       </div>
     </div>
-
   </div>
+
+  <script>
+    document.querySelector('.wrapper').addEventListener('click', function (e){
+      console.log(e)
+      let currentLoc = e.target
+      if (currentLoc.type === 'checkbox' || currentLoc.tagName === 'LABEL') {
+        while (currentLoc.className != "item-left") {
+          currentLoc = currentLoc.parentElement
+        }
+
+        let a = currentLoc.querySelector("label").classList.toggle('done')
+        console.log(e.target.parentElement)
+
+
+      } 
+
+    })
+
+  </script>
 </body>
 </html>

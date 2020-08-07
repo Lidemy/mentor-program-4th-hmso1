@@ -86,6 +86,11 @@ hr {
     border: 1.5px solid rgba(67, 67, 67, 0.4);
 }
 
+.done {
+    text-decoration: line-through;
+    opacity: 40%;
+}
+
 @media (max-width: 569px) {
     .list-input {
         padding: 0px 2px 33px 2px;

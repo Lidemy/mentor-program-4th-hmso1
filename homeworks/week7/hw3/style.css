@@ -7,8 +7,7 @@ body {
     box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     max-width: 562px;
-    margin: 0 auto;
-    margin-top: 131px;
+    margin: 131px auto;
     padding: 33px 0px;
 }
 
@@ -44,6 +43,7 @@ body {
 }
 
 #todo-sub {
+    cursor: pointer;
     width: 76px;
     height: 38px;
     background: rgba(0, 0, 0, 0.7);
@@ -66,19 +66,29 @@ body {
     align-items: center;
     justify-content: space-between;
 }
+.item-left {
+    display: flex;
+    align-items: center;
+}
 
 .item-left input {
     width: 26px;
     height: 26px;
     margin: 0;
+    cursor: pointer;
 }
 .item-left label{
     font-size: 30px;
+    max-width: 320px;
     margin-left: 20px;
+    cursor: pointer;
+    display: block;
+    word-wrap: break-word;
 }
 
 .item-right input{
     box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 hr {
@@ -90,6 +100,8 @@ hr {
     text-decoration: line-through;
     opacity: 40%;
 }
+
+
 
 @media (max-width: 569px) {
     .list-input {

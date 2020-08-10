@@ -18,32 +18,32 @@
       
       <label for="name" class="require">暱稱 </label>
       <input type="text" id="name" placeholder="您的回答">
-      <p class="warning">請填寫暱稱</p>
+      <p class="warning hide">請填寫暱稱</p>
     
 
       
       <label for="email" class="require">電子郵件 </label>
       <input type="text" id="email" placeholder="您的電子郵件">
-      <p class="warning">請填寫電子郵件</p>
+      <p class="warning hide">請填寫電子郵件</p>
     
 
     
       <label for="mobile" class="require">手機號碼 </label>
       <input type="text" id="mobile" placeholder="您的手機號碼">
-      <p class="warning">請填寫手機號碼</p>
+      <p class="warning hide">請填寫手機號碼</p>
     
 
     
       <p class="radio-input require" data-name="register-ans">報名類型 </p>
       <label class="radio-btn"><input type="radio" name="register-ans" >躺在床上用想像力實作</label>
       <label class="radio-btn" data-name="register-ans"><input type="radio" name="register-ans"> 趴在地上滑手機找現成的</label>
-      <p class="warning">請填寫報名類型</p>
+      <p class="warning hide">請填寫報名類型</p>
     
 
     
       <label for="source" class="require">怎麼知道這個活動的？ </label>
       <input type="text" id="source" placeholder="您的回答">
-      <p class="warning">請填寫您的回答</p>
+      <p class="warning hide">請填寫您的回答</p>
     
 
     
@@ -62,58 +62,7 @@
     © 2020 © Copyright. All rights Reserved.
   </footer>
 
-  <script>
-
-    function isCheckTextInput () {
-      let status = true
-
-      const textInput = document.querySelectorAll('label[class="require"]')
-      
-      for(let i=0; i<textInput.length; i++) {
-        const ele = textInput[i].htmlFor;
-        if (document.querySelector('#' + ele).value === "") {
-          document.querySelector(`#${ele} + .warning`).style.display = 'block'
-          status = false
-        } else {
-          document.querySelector(`#${ele} + .warning`).style.display = 'none'
-        }
-      }
-      return status
-
-    }
-
-    function isCheckRadioInput() {
-
-      const radioBtn = document.querySelectorAll(`input[name="register-ans"]`)
-      if (radioBtn[0].checked) {
-        document.querySelector(`label[data-name="register-ans"] + .warning`).style.display = 'none'
-        return '躺在床上用想像力實作'
-      } else if (radioBtn[1].checked) {
-        document.querySelector(`label[data-name="register-ans"] + .warning`).style.display = 'none'
-        return '趴在地上滑手機找現成的'
-        
-      }
-      document.querySelector(`label[data-name="register-ans"] + .warning`).style.display = 'block'
-      return false
-    }
-
-    document.querySelector('.register-form').addEventListener('submit', (e) => {
-      
-      e.preventDefault()
-      const textStatus = isCheckTextInput()
-      const radioStatus = isCheckRadioInput()
-      if (textStatus && Boolean(radioStatus)) {
-        alert(`
-        暱稱: ${document.querySelector('#name').value}
-        電子郵件: ${document.querySelector('#email').value}
-        手機號碼: ${document.querySelector('#mobile').value}
-        報名類型: ${radioStatus}
-        怎麼知道這個活動的:${document.querySelector('#source').value}
-        其他:${document.querySelector('#other').value}
-        `)
-      }
-    })
-  </script>
+  <script type="text/javascript" src="formcheck.js"></script>
 
 </body>
 </html>

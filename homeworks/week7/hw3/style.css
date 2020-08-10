@@ -31,7 +31,7 @@ body {
     align-items: center;
 }
 
-#todo-work {
+.todo-work {
     width: 422px;
     height: 38px;
     background: #F8F5F5;
@@ -42,7 +42,7 @@ body {
     font-size: 20px;
 }
 
-#todo-sub {
+.todo-sub {
     cursor: pointer;
     width: 76px;
     height: 38px;
@@ -101,6 +101,13 @@ hr {
     opacity: 40%;
 }
 
+.hide {
+    display: none;
+}
+
+ .missing-input {
+    border: 2px solid red;
+}
 
 
 @media (max-width: 569px) {

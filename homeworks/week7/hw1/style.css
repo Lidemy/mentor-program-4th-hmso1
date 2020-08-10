@@ -101,5 +101,9 @@ footer {
 .warning {
     margin-top: 10px;
     color: red;
+}
+
+.hide {
     display: none;
 }
+

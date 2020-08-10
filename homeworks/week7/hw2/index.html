@@ -253,19 +253,7 @@
     </div>
 
   </footer>
-
-
   
-  <script>
-    let ele = document.querySelector(".question-list")
-    ele.addEventListener('click', function (e) {
-      let currentLoc = e.target
-      
-      while (currentLoc.className != "question-answer-set") {
-        currentLoc = currentLoc.parentElement
-      }
-      currentLoc.querySelector('.answer').classList.toggle('active')
-    })
-  </script>
+  <script type="text/javascript" src="Q&A.js"></script>
 </body>
 </html>

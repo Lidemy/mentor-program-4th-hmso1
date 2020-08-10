@@ -13,8 +13,8 @@
     <div class="list-input">
       <h1>TO-DO List</h1>
       <form action="">
-        <input type="text" id="todo-work" placeholder="待辦清單 ~ ~">
-        <input type="submit" id="todo-sub" value="ADD">
+        <input type="text" class="todo-work" placeholder="待辦清單 ~ ~">
+        <input type="submit" class="todo-sub" value="ADD">
       </form>
     </div>
 
@@ -39,7 +39,7 @@
       <div class="list-item">
         <div class="item-top">
           <div class="item-left">
-            <input type="checkbox" name="box1"><label for="box1">寫作業</label>
+            <input type="checkbox" name="box1"><label for="box1">做運動</label>
           </div>
           <div class="item-right">
             <input type="button" value="Delete">
@@ -55,7 +55,7 @@
       <div class="list-item">
         <div class="item-top">
           <div class="item-left">
-            <input type="checkbox" name="box1"><label for="box1">寫作業</label>
+            <input type="checkbox" name="box1"><label for="box1">看 hunter X hunter</label>
           </div>
           <div class="item-right">
             <input type="button" value="Delete">
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="list-contents" style="display: none;">
+    <div class="list-contents hide" >
       <div class="list-item">
         <div class="item-top">
           <div class="item-left">
@@ -84,62 +84,6 @@
     </div>
   </div>
 
-  <script>
-    document.querySelector('.wrapper').addEventListener('click', function (e){
-      console.log(e)
-      
-      
-      let currentLoc = e.target
-
-      //check or uncheck the to-do list item
-      if (currentLoc.type === 'checkbox' || currentLoc.tagName === 'LABEL') {
-        while (currentLoc.className != "item-left") {
-          currentLoc = currentLoc.parentElement
-        }
-
-        let checkStatus = currentLoc.querySelector("label").classList.toggle('done')
-        console.log(checkStatus)
-
-        if(checkStatus) {
-          e.target.parentNode.firstElementChild.checked = true
-        } else {
-          e.target.parentNode.firstElementChild.checked = false
-        }
-      } 
-      console.log(e.target.parentNode.firstElementChild.checked)
-
-      //delect the to-do list item
-      if(currentLoc.type === "button") {
-        while (currentLoc.className != "list-contents") {
-          currentLoc = currentLoc.parentElement
-        }
-        currentLoc.style.display = 'none' 
-      }
-
-      if(currentLoc.type === "submit"){
-        e.preventDefault()
-        const work = currentLoc.parentNode[0].value
-        if (work != "") {
-          let copy = document.querySelectorAll('.list-contents')
-          clone = copy[copy.length-1].cloneNode(true)
-          
-          clone.querySelector('label').innerText = work
-          clone.style.display = "block"
-          document.querySelector('.wrapper').insertBefore(clone, document.querySelector('.list-contents'))          
-
-          currentLoc.parentNode[0].setAttribute("placeholder", "待辦清單")
-          currentLoc.parentNode[0].style.border = "1px solid rgba(0, 0, 0, 0.7)"
-          currentLoc.parentNode[0].value=""
-
-        } else {
-          currentLoc.parentNode[0].setAttribute("placeholder", "請輸入待辦事件")
-          console.log(currentLoc.parentNode[0])
-          currentLoc.parentNode[0].style.border = "2px solid red"
-        }
-      }
-
-    })
-
-  </script>
+  <script type="text/javascript" src="toDoList.js"></script>
 </body>
 </html>

@@ -63,10 +63,12 @@ DOM 的全名是 Document Object Model, 是一個 API 可以使 JavaScript 經�
 因為有了 DOM，我們可以使用 JS 在節點間移動，拿到我們想要的 tag 內資料。
 
 ## 事件傳遞機制的順序是什麼；什麼是冒泡，什麼又是捕獲？
-<img src="https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week7/homeworks/week7/DOM.JPG?raw=true" width="400px" />
+<img src="https://github.com/Lidemy/mentor-program-4th-hmso1/blob/week7/homeworks/week7/CaptureBubbling.PNG?raw=true" width="400px" />
 
 當我們點擊 `<p>` 的時候，程式並不是步到位去到 `<p>`元素，程式是經過 DOM 的結構一歩一歩由 Document 傳遞到 `<p>` 的位置，由 Document 行去 `<p>` 就是叫捕獲。當到了目標後，程式會返回到 Document，這部份叫做冒泡。在 `addEventListener` 時，我們可以傳入第三個參數，true 就是放在捕獲，false 就是放在冒泡。參數的預設值是 false，也是放在冒泡中。
 當到達目標 `<p>` 的時候，它並不屬於捕獲或冒泡任何一方，所以在目標加入 `捕獲的addEventListener` 和 `冒泡的addEventListener` 時會根據先後次序執行，不一定要先捕獲後冒泡。
+
+
 
 ## 什麼是 event delegation，為什麼我們需要它？
 在知道事件傳遞機制的運行，當處理動態網頁時，為了不需要將每個動態元素都加上 `addEventListener`，也不怕新增的元素沒有加上 `addEventListener`。我們會在動態元素的 ParentElement 加上 `addEventListener`，使每一個動態元素都會受到 Parent 的控制，包括新增的元素。我們經 JS 控制了 Parent 就可以控制到每一個動態元素。

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  <title>To-Do List</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="list-input">
+      <h1>TO-DO List</h1>
+      <form action="">
+        <input type="text" class="todo-work" placeholder="待辦清單 ~ ~">
+        <input type="submit" class="todo-sub" value="ADD">
+      </form>
+    </div>
+
+    
+    <div class="list-contents">
+      <div class="list-item">
+        <div class="item-top">
+          <div class="item-left">
+            <input type="checkbox" name="box1"><label for="box1">寫作業</label>
+          </div>
+          <div class="item-right">
+            <input type="button" value="Delete">
+          </div>
+        </div>
+        <div class="item-bottom">
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-contents">
+      <div class="list-item">
+        <div class="item-top">
+          <div class="item-left">
+            <input type="checkbox" name="box1"><label for="box1">做運動</label>
+          </div>
+          <div class="item-right">
+            <input type="button" value="Delete">
+          </div>
+        </div>
+        <div class="item-bottom">
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-contents">
+      <div class="list-item">
+        <div class="item-top">
+          <div class="item-left">
+            <input type="checkbox" name="box1"><label for="box1">看 hunter X hunter</label>
+          </div>
+          <div class="item-right">
+            <input type="button" value="Delete">
+          </div>
+        </div>
+        <div class="item-bottom">
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-contents hide" >
+      <div class="list-item">
+        <div class="item-top">
+          <div class="item-left">
+            <input type="checkbox" name="box1"><label for="box1">Template</label>
+          </div>
+          <div class="item-right">
+            <input type="button" value="Delete">
+          </div>
+        </div>
+        <div class="item-bottom">
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="toDoList.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    background: rgba(196, 196, 196, 0.2);
+}
+
+.wrapper {
+    background: rgba(121, 116, 116, 0.8);
+    box-shadow: 1.4px 1.4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    max-width: 562px;
+    margin: 131px auto;
+    padding: 33px 0px;
+}
+
+.list-input {
+    padding: 0px 21px 33px 21px;
+    
+}
+
+.list-input h1 {
+    font-size: 45px;
+    line-height: 58px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+.list-input form {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-work {
+    width: 422px;
+    height: 38px;
+    background: #F8F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+.todo-sub {
+    cursor: pointer;
+    width: 76px;
+    height: 38px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    color: #FAEDED;
+    font-size: 25px;
+    font-family: 'Lora', serif;
+}
+
+.list-contents {
+    margin: 0 auto;
+    max-width: 458px;
+    padding-bottom: 16px;
+}
+
+.item-top {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.item-left {
+    display: flex;
+    align-items: center;
+}
+
+.item-left input {
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    cursor: pointer;
+}
+.item-left label{
+    font-size: 30px;
+    max-width: 320px;
+    margin-left: 20px;
+    cursor: pointer;
+    display: block;
+    word-wrap: break-word;
+}
+
+.item-right input{
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+hr {
+    margin-top: 7px;
+    border: 1.5px solid rgba(67, 67, 67, 0.4);
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 40%;
+}
+
+.hide {
+    display: none;
+}
+
+ .missing-input {
+    border: 2px solid red;
+}
+
+
+@media (max-width: 569px) {
+    .list-input {
+        padding: 0px 2px 33px 2px;
+        font-size-adjust: unset;
+    }
+}

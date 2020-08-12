@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表單</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form action="" class="register-form">
+
+      <h2 class="form-title">新拖延運動報名表單</h2>
+      <p class="form-desc">活動日期：2020/12/10 ~ 2020/12/11</p>
+      <P class="form-desc fd-two">活動地點：台北市大安區新生南路二段1號</P>
+      <p class="form-required">*必填</p>
+      
+      
+      <label for="name" class="require">暱稱 </label>
+      <input type="text" id="name" placeholder="您的回答">
+      <p class="warning hide">請填寫暱稱</p>
+    
+
+      
+      <label for="email" class="require">電子郵件 </label>
+      <input type="text" id="email" placeholder="您的電子郵件">
+      <p class="warning hide">請填寫電子郵件</p>
+    
+
+    
+      <label for="mobile" class="require">手機號碼 </label>
+      <input type="text" id="mobile" placeholder="您的手機號碼">
+      <p class="warning hide">請填寫手機號碼</p>
+    
+
+    
+      <p class="radio-input require" data-name="register-ans">報名類型 </p>
+      <label class="radio-btn"><input type="radio" name="register-ans" >躺在床上用想像力實作</label>
+      <label class="radio-btn" data-name="register-ans"><input type="radio" name="register-ans"> 趴在地上滑手機找現成的</label>
+      <p class="warning hide">請填寫報名類型</p>
+    
+
+    
+      <label for="source" class="require">怎麼知道這個活動的？ </label>
+      <input type="text" id="source" placeholder="您的回答">
+      <p class="warning hide">請填寫您的回答</p>
+    
+
+    
+      <label for="other">其他</label>
+      <p class="other-remark">對活動的一些建議</p>
+      <input type="text" id="other" placeholder="您的回答">    
+      
+      <input type="submit" value="提交" class="submit-btn">
+      
+      <p class="form-remark">請勿透過表單送出您的密碼。</p>
+
+    </form>
+  </div>
+
+  <footer>
+    © 2020 © Copyright. All rights Reserved.
+  </footer>
+
+  <script type="text/javascript" src="formcheck.js"></script>
+
+</body>
+</html>

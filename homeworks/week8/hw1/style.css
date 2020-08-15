@@ -18,7 +18,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 nav .containner {
   width: 100%;
@@ -64,47 +64,71 @@ nav ul li.active a, nav ul li a:hover{
   color: white;
 }
 
-.lucky-draw {
+.lucky-draw-main {
   margin-top: 84px;
-  width: auto;
+  background-image: url(./games-bn.png);
   height: 767px;
+  width: 100%;
 }
 
-.main {
-  background-image: url(./games-bn.jpg);
+
+.first {
+  content:url(./first.jpg);
 }
 
-.lucky-draw-box {
+.ld-outside-box {
   width: 500px;
   height: 560px;
-  margin: 0 auto;
   border-radius: 16px;
-  background-color: white;
+  background: white;
+  margin: 0 auto;
   position: relative;
   top: 55px;
 }
 
-.lucky-draw-header {
-  color: #5ec1b6;
+.ld-header {
   font-size: 24px;
+  color: #5ec1b6;
   text-align: center;
-  padding-top: 40px;
-  margin-bottom:44px ;
+  padding-top: 42px;
+  margin-bottom: 22px;
 }
 
-.lucky-draw-info {
+.ld-item-box {
+  margin: 24px 20px;
+}
+
+.ld-item-pair {
   display: flex;
-  margin: 20px 20px 0px 20px;
-  padding-bottom: 20px;
+  padding: 20px 0px;
   border-bottom: 1px solid grey;
-}
-
-.lucky-draw-info .question {
-  display: block;
-  flex-basis: 84px;
-  margin-right: 20px;
+  align-items: center;
   
 }
+
+.ld-question {
+  margin-right: 20px; 
+  font-weight: bold;
+  
+}
+.ld-answer {
+  text-align: left;
+  width: 319px;
+}
+
+.lucky-draw-btn {
+  background-color: #e62a45;
+  width: 400px;
+  height: 55px;
+  border-radius: 8px;
+  margin: 40px auto 24px auto;
+  display: block;
+  border: 0;
+  font-size: 20px;
+  color: white;
+  
+}
+
 
 footer {
   background-color: #e8efee;

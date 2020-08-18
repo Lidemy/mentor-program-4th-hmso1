@@ -66,24 +66,54 @@ nav ul li.active a, nav ul li a:hover{
 
 .lucky-draw-main {
   margin-top: 84px;
-  background-image: url(./games-bn.png);
-  height: 767px;
+  background-image: url(./games-bn.jpg);
+  background-size: cover;
+  height: 700px;
   width: 100%;
 }
 
 
 .first {
-  content:url(./first.jpg);
+  background-image: url(./first.jpg);
+
+}
+.first .result-page p:before {
+  content:"恭喜你中頭獎了！日本東京來回雙人遊！"
+}
+
+.second {
+  background-image: url(./second.jpg);
+
+}
+
+.second .result-page p:before {
+  content:"二獎！90 吋電視一台！"
+}
+
+.third  {
+  background-image: url(./third.jpg);
+}
+.third .result-page  p:before {
+  content:"恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！"
+}
+
+.none {
+  background-image: linear-gradient(black, black), url(./games-bn.jpg);
+  background-blend-mode: saturation;
+}
+.none .result-page p:before {
+  content:"銘謝惠顧"
 }
 
 .ld-outside-box {
-  width: 500px;
-  height: 560px;
+  max-width: 500px;
+  padding-bottom: 24px;
   border-radius: 16px;
   background: white;
   margin: 0 auto;
   position: relative;
   top: 55px;
+  
 }
 
 .ld-header {
@@ -118,7 +148,7 @@ nav ul li.active a, nav ul li a:hover{
 
 .lucky-draw-btn {
   background-color: #e62a45;
-  width: 400px;
+  width: 300px;
   height: 55px;
   border-radius: 8px;
   margin: 40px auto 24px auto;
@@ -126,9 +156,29 @@ nav ul li.active a, nav ul li a:hover{
   border: 0;
   font-size: 20px;
   color: white;
+  cursor:pointer;
   
 }
 
+.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.result-page {
+  width: 100%;
+  height: 150px;
+  padding-top: 190px;
+  position: relative;
+  visibility: visible;
+  z-index: 0;
+}
+
+.result-page p{
+  min-height: 50px;
+  font-size: 36px;
+  text-align: center;
+}
 
 footer {
   background-color: #e8efee;
@@ -178,6 +228,7 @@ footer {
 
 @media (max-width: 945px) {
   nav {
+    position: static;
     height: auto;
   }
 
@@ -205,6 +256,24 @@ footer {
     text-align: center;
     margin: 0 auto;
   }
+
+  .ld-outside-box {
+    border-radius: 0px;
+    position:static;
+    
+  }
+  .lucky-draw-main {
+    height: auto;
+    margin-top: 0px;
+  }
+
+  .result-page {
+    position: static;
+    min-height: 300px;
+    padding-top: 80px;
+
+  }
+
 
   footer {
     height: auto;

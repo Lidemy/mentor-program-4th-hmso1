@@ -1,0 +1,144 @@
+* {
+  padding: 0px;
+  margin: 0;
+}
+
+.warning {
+  color:#64363C;
+  background-color: #F8C3CD;
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: 0px;
+}
+
+body {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+}
+
+.board-container {
+  padding: 10px 25px;
+}
+
+.board-btn {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: black;
+}
+.form-header {
+  margin-bottom: 25px;
+}
+
+.form-nickname {
+  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+
+}
+
+.form-nickname input {
+  padding: 4px;
+  margin-left: 4px;
+  border: 1px solid lightskyblue;
+  box-shadow: none;
+}
+
+.form-content {
+  width: 100%;
+  border-color: lightskyblue;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+} 
+
+.form-btn{
+  width: 90px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.comment-card {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.card-avater {
+  min-width: 50px;
+  height: 50px;
+  background-color: lightskyblue;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+.card-nickname {
+  margin-right: 5px;
+  word-break: break-all;
+  
+}
+.card-created-at {
+  min-width: 136px;
+}
+
+.card-body-content {
+  word-break: break-all;
+  white-space: pre-line;
+  
+}
+
+.error-code {
+  color: #64363C;
+  font-weight: bold;
+}
+
+
+
+
+@media (max-width: 770px) {
+  .warning {
+    position: static;
+  }
+
+  .container{
+    margin:0 auto;
+  }
+}

@@ -10,7 +10,7 @@
   }
 
 
-  $result = $conn->query('SELECT * FROM comments ORDER BY id DESC');
+  $result = $conn->query('SELECT * FROM iris_week9_comments ORDER BY id DESC');
 
   if (!$result) {
     die($conn->error);
@@ -72,7 +72,7 @@
           <div class="card-body">
             <div class="card-body-info">
               <p class="card-nickname"><?php echo $row['nickname'];?></p>
-              <p class="card-created-at"><?php echo $row['created-at'];?></p>
+              <p class="card-created-at"><?php echo $row['created_at'];?></p>
             </div>
             <div class="card-body-content"><?php echo $row['comment'];?>
             </div>

@@ -13,7 +13,7 @@
   $nickname = $_POST['nickname'];
   $password = $_POST['password'];
 
-  $sql = sprintf('INSERT INTO users(username, nickname, password) VALUES("%s", "%s", "%s")', $username, $nickname, $password);
+  $sql = sprintf('INSERT INTO iris_week9_users(username, nickname, password) VALUES("%s", "%s", "%s")', $username, $nickname, $password);
   $result = $conn->query($sql);
 
   if (!$result) {

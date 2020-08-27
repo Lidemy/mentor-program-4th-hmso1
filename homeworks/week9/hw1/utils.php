@@ -3,7 +3,7 @@
   function getUserFromSession($username) {
     global $conn;
 
-    $sql = sprintf('SELECT * FROM users WHERE username="%s"', $username);
+    $sql = sprintf('SELECT * FROM iris_week9_users WHERE username="%s"', $username);
     $result = $conn->query($sql);
 
     if(!$result) {

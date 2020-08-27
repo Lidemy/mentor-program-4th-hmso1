@@ -12,7 +12,7 @@
   $nickname = $user['nickname'];
   $comment = $_POST['comment'];
 
-  $sql = sprintf('INSERT INTO comments(nickname, comment) VALUES("%s", "%s")', $nickname, $comment);
+  $sql = sprintf('INSERT INTO iris_week9_comments(nickname, comment) VALUES("%s", "%s")', $nickname, $comment);
   $result = $conn->query($sql);
 
   if (!$result) {

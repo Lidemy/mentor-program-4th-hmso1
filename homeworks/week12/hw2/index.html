@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="to_do.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <h1 class="text-center mt-5 text-light bg-dark col-4">TO-DO LIST</h1>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-6 input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-secondary" type="button" id="save-btn">SAVE</button>
+        </div>
+        <input type="text" class="form-control" placeholder="What need to be done?" id="todo-input">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-6 ">
+        <div class="card" > 
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item my-bottom-wrapper">
+              <div class="my-container d-flex justify-content-between">
+                <span>
+                  <span id="active-item">0</span> items left
+                </span>
+                <div>
+                  <button class="btn btn-outline-dark btn-sm active" id="filter-all">All</button>
+                  <button class="btn btn-outline-dark btn-sm" id="filter-active">Active</button>
+                  <button class="btn btn-outline-dark btn-sm" id="filter-completed">Completed</button>
+                </div>
+                <span id="clear-completed">Clear completed</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-image: url('https://picsum.photos/1800?grayscale');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .my-bottom-wrapper {
+      padding: 12px 0px;
+    }
+
+    .my-bottom-wrapper .my-container {
+      padding: 0px 8px;
+    }
+
+    .cancel-btn{
+      border: none;
+      background: none;
+      color: white;
+      
+    }    
+
+    li:hover .cancel-btn{
+      color: black;
+    }
+
+    button.cancel-btn:hover{
+      color: tomato !important;
+      transition: color 0.2s ease-out;
+    }
+
+    .cancel-btn:focus {
+      outline:none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    input[type="checkbox"] {
+      z-index: 10;
+    }
+
+    #clear-completed:hover {
+      color: teal !important;
+      transition: color 0.2s ease-out;
+      cursor: pointer;
+    }
+
+  </style>
+  
+</body>
+</html>

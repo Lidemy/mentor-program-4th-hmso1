@@ -1,37 +1,43 @@
 /* eslint-disable import/prefer-default-export, prefer-destructuring, no-use-before-define, no-alert, no-plusplus, max-len */
 import $ from 'jquery';
 import { getComments, addComments } from './api';
-import { appendCommentToDOM } from './utils';
-import { cssTemplate, formTemplate } from './templates';
-
-let id = Number.MAX_SAFE_INTEGER;
-let siteKey = '';
-let apiUrl = '';
-let containerElement = null;
-let commentsDOM = null;
+import { appendCommentToDOM, appendStyle } from './utils';
+import { cssTemplate, getForm } from './templates';
 
 export function init(options) {
+  let id = Number.MAX_SAFE_INTEGER;
+  let siteKey = '';
+  let apiUrl = '';
+  let containerElement = null;
+  let commentsDOM = null;
+
   siteKey = options.siteKey;
   apiUrl = options.apiUrl;
+
+  const loadMoreClassName = `${siteKey}-loading`;
+  const loadMoreSelector = `.${loadMoreClassName}`;
+  const commentsClassName = `${siteKey}-comments`;
+  const commentsSelector = `.${commentsClassName}`;
+  const formClassName = `${siteKey}-add-comment-form`;
+  const formSelector = `.${formClassName}`;
+
   containerElement = $(options.containerSelector);
-  containerElement.append(formTemplate);
+  containerElement.append(getForm(formClassName, commentsClassName, loadMoreClassName));
 
-  const styleElement = document.createElement('style');
-  styleElement.type = 'text/css';
-  styleElement.appendChild(document.createTextNode(cssTemplate));
-  document.head.appendChild(styleElement);
+  appendStyle(cssTemplate);
 
-  commentsDOM = $('.comments');
+  commentsDOM = $(commentsSelector);
 
   getNewComments();
 
-  $('.add-comment-form').submit((e) => {
+  $(formSelector).submit((e) => {
     e.preventDefault();
-
+    const nicknameDom = $(`${formSelector} input[name=nickname]`);
+    const contentDom = $(`${formSelector} textarea[name=content]`);
     const newCommentData = {
       site_key: siteKey,
-      nickname: $('input[name=nickname]').val(),
-      content: $('textarea[name=content]').val(),
+      nickname: nicknameDom.val(),
+      content: contentDom.val(),
     };
 
     addComments(apiUrl, newCommentData, (data) => {
@@ -39,39 +45,39 @@ export function init(options) {
         alert(data.message);
         return;
       }
-      $('input[name=nickname]').val('');
-      $('textarea[name=content]').val('');
+      nicknameDom.val('');
+      contentDom.val('');
       appendCommentToDOM(commentsDOM, newCommentData, true);
     });
   });
 
-  $(document).on('click', 'button[name="loading"]', (() => {
+  $(document).on('click', loadMoreSelector, (() => {
     getNewComments();
   }));
-}
 
-function getNewComments() {
-  let diff = 0;
-  commentsDOM = $('.comments');
-  getComments(apiUrl, siteKey, id, (data) => {
-    if (!data.ok) {
-      alert(data.message);
-      return;
-    }
-    const comments = data.comments;
+  function getNewComments() {
+    let diff = 0;
+    commentsDOM = $(commentsSelector);
+    getComments(apiUrl, siteKey, id, (data) => {
+      if (!data.ok) {
+        alert(data.message);
+        return;
+      }
+      const comments = data.comments;
 
-    if (comments.length > 5) {
-      id = comments[comments.length - 2].id;
-    }
+      if (comments.length > 5) {
+        id = comments[comments.length - 2].id;
+      }
 
-    if (comments.length !== 6) {
-      $('button[name="loading"]').hide();
-    } else {
-      diff = 1;
-    }
+      if (comments.length !== 6) {
+        $(loadMoreSelector).hide();
+      } else {
+        diff = 1;
+      }
 
-    for (let i = 0; i < comments.length - diff; i++) {
-      appendCommentToDOM(commentsDOM, comments[i]);
-    }
-  });
+      for (let i = 0; i < comments.length - diff; i++) {
+        appendCommentToDOM(commentsDOM, comments[i]);
+      }
+    });
+  }
 }

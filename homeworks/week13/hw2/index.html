@@ -10,17 +10,28 @@
   <script>
     $(document).ready(() => {
       commentPlugin.init({
-          siteKey: 'iris',
+          siteKey: 'iris2',
           apiUrl: 'http://mentor-program.co/mtr04group6/Iris/week12/hw1',
           containerSelector: '.comments-area'
       })
     })
+
+    $(document).ready(() => {
+      commentPlugin.init({
+          siteKey: 'iris3',
+          apiUrl: 'http://mentor-program.co/mtr04group6/Iris/week12/hw1',
+          containerSelector: '.comments-area2'
+      })
+    })
+
+
   </script>
 
 </head>
 <body>
   <div class="container">
       <div class="comments-area"></div>
+      <div class="comments-area2"></div>
   </div>
   
 </body>

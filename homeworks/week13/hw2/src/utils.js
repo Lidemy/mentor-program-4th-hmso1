@@ -24,3 +24,10 @@ export function appendCommentToDOM(container, comment, isPrepend) {
     container.append(html);
   }
 }
+
+export function appendStyle(cssTemplate) {
+  const styleElement = document.createElement('style');
+  styleElement.type = 'text/css';
+  styleElement.appendChild(document.createTextNode(cssTemplate));
+  document.head.appendChild(styleElement);
+}

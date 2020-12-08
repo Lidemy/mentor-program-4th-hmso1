@@ -1,0 +1,176 @@
+* {
+  padding: 0px;
+  margin: 0;
+}
+
+.warning {
+  color: #64363C;
+  background-color: #F8C3CD;
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: 0px;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  padding: 10px 25px;
+}
+
+.error-code {
+  color: #64363C;
+  font-weight: bold;
+}
+
+@media (max-width: 770px) {
+  .warning {
+    position: static;
+  }
+
+  .container {
+    margin: 0 auto;
+  }
+}
+.form-btn, .board-btn {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid lightskyblue;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.board-btn {
+  margin-bottom: 20px;
+}
+
+.form-header {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.form-nickname {
+  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+.form-nickname input {
+  padding: 4px;
+  margin-left: 4px;
+  border: 1px solid lightskyblue;
+}
+.form-content {
+  width: 100%;
+  border-color: lightskyblue;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.comment-card {
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.comment-card .card-avater {
+  min-width: 50px;
+  height: 50px;
+  background-color: lightskyblue;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.comment-card .card-body {
+  display: flex;
+  align-items: none;
+  justify-content: center;
+  flex-direction: column;
+}
+.comment-card .card-body-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.comment-card .card-body-content {
+  word-break: break-all;
+  white-space: pre-line;
+}
+.comment-card .card-nickname {
+  margin-right: 5px;
+  word-break: break-all;
+}
+.comment-card .card-created-at {
+  min-width: 136px;
+}
+.comment-card .card-modify-comment-btn {
+  padding: 0px 3px;
+}
+
+.hidden {
+  display: none;
+}
+
+.pagination {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.pagination-page .page-no {
+  margin-top: 10px;
+  padding: 5px 5px;
+  border: 1px solid lightskyblue;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+}
+.pagination-page .page-active {
+  background-color: lightskyblue;
+}
+.pagination-page .disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.user-table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+.user-table th, .user-table td {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=index.css.map */

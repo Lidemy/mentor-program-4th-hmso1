@@ -1,0 +1,40 @@
+* 
+  padding: 0px
+  margin: 0
+  
+.warning 
+  color: $warning-text
+  background-color: $warning-bgc
+  width: 100%
+  font-size: 0.9em
+  font-weight: bold
+  text-align: center
+  padding: 10px
+  position: fixed
+  top: 0px
+
+
+body 
+  background-color: rgba($black,0.1)
+
+
+.container 
+  max-width: 600px
+  margin: 60px auto
+  background-color: white
+  border-radius: 10px
+  box-shadow: 2px 2px 1px rgba($black,0.3)
+  box-sizing: border-box
+  padding: 10px 25px
+
+.error-code 
+  color: $warning-text
+  font-weight: bold
+
+@media (max-width: 770px) 
+  .warning 
+    position: static
+
+  .container
+    margin:0 auto
+

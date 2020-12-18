@@ -1,0 +1,112 @@
+@import _variables.sass
+@import _layouts.sass
+@import _mixins
+@import _components.sass
+
+.board-btn 
+  @extend %button
+  margin-bottom: 20px
+
+.form
+  &-btn
+    @extend %button
+
+  &-header 
+    margin-top: 10px
+    margin-bottom: 25px
+
+  &-nickname 
+    margin-top: 10px
+    display: inline-block
+    margin-bottom: 15px
+    font-size: 1.1em
+
+    input 
+      padding: 4px
+      margin-left: 4px
+      border: 1px solid $border-color
+
+  &-content 
+    width: 100%
+    border-color: $border-color
+    padding: 10px
+    margin-top: 10px
+    box-sizing: border-box
+
+hr 
+  width: 100%
+  margin-bottom: 20px
+  margin-top: 20px
+
+
+.comment-card 
+  +flex($justify-content:none)
+  margin-bottom: 30px
+  .card
+    &-avater 
+      min-width: 50px
+      height: 50px
+      background-color: $border-color
+      border-radius: 50%
+      margin-right: 20px
+
+    &-body 
+      +flex($flex-direction: column, $align-items: none)
+
+      &-info 
+        +flex
+        margin-bottom: 10px
+
+      &-content 
+        word-break: break-all
+        white-space: pre-line
+    
+    &-nickname 
+      margin-right: 5px
+      word-break: break-all
+    
+    &-created-at 
+      min-width: 136px
+    
+    &-modify-comment-btn 
+      padding: 0px 3px 
+
+.hidden 
+  display: none
+
+.pagination 
+  text-align: center
+  padding-bottom: 30px
+
+  &-page 
+    +flex
+
+    .page-no 
+      margin-top: 10px
+      padding: 5px 5px
+      border: 1px solid $border-color
+      width: 20px
+      height: 20px
+      text-decoration: none
+
+    .page-active 
+      background-color: $border-color
+
+    .disabled 
+      pointer-events: none
+      cursor: default
+      background-color: rgba($black, 0.2)
+
+.user-table 
+  width: 100%
+  text-align: center
+  border:1px solid black
+  margin-bottom: 20px
+
+  th, td 
+    border:1px solid black
+
+
+
+
+  

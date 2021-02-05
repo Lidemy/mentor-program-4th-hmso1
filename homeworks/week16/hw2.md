@@ -52,7 +52,7 @@ i: 0
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-      <td colspan="2">console.log(i)</td>
+      <td colspan="2">() => {console.log(i)}</td>
     </tr>
 </table>
 
@@ -84,7 +84,7 @@ i: 1
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-      <td colspan="2">console.log(i)</td>
+      <td colspan="2">() => {console.log(i)}</td>
     </tr>
 </table>
 
@@ -120,7 +120,7 @@ i: 2
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-      <td colspan="2">console.log(i)</td>
+      <td colspan="2">() => {console.log(i)}</td>
     </tr>
 </table>
 
@@ -160,7 +160,7 @@ i: 3
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-      <td colspan="2">console.log(i)</td>
+      <td colspan="2">() => {console.log(i)}</td>
     </tr>
 </table>
 
@@ -188,7 +188,12 @@ i: 4
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-      <td colspan="2">console.log(i), console.log(i), console.log(i), console.log(i), console.log(i)</td>
+      <td colspan="2">() => {console.log(i)} <br>
+        () => {console.log(i)} <br>
+        () => {console.log(i)} <br>
+        () => {console.log(i)} <br>
+        () => {console.log(i)} <br>
+      </td>
     </tr>
 </table>
 

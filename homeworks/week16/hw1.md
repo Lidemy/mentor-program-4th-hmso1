@@ -1,4 +1,4 @@
-在瀏覽器中 JaveScript 程式碼會由 main thread 處理，程式碼會放到 main thread 上 call stack 執行。對於一些由 runtime 所提供而不是 JavaScript 原生的程式例如 setTimeout, ajax 等的 function 就會由 WebAPI 非同步地處理。當 WebAPI 完成執行後會把結果放到 callback queue 直到 call stack 是空為至。Event Loop 會不停檢查 call stack 是否空，當 call stack 是空是就負責將 callback queue 的程式碼一個個放到 call stack 上執行。
+在瀏覽器中 JaveScript 程式碼會由 main thread 處理，程式碼會放到 main thread 上 call stack 執行。對於一些由 runtime 所提供而不是 JavaScript 原生的程式例如 setTimeout, ajax 等的 WebAPI 就會在 runtime 中處理。當 runtime 完成執行後會把結果放到 callback queue 直到 call stack 是空為至。Event Loop 會不停檢查 call stack 是否空，當 call stack 是空是就負責將 callback queue 的程式碼一個個放到 call stack 上執行。
 
 1. 一開始未執行程式碼時 call stack 和 WebAPI 都是空
 <table>
@@ -81,7 +81,7 @@
     <td colspan="2">Callback Queue</td>
   </tr>
    <tr>
-    <td colspan="2">console.log(2)</td>
+    <td colspan="2">() => {console.log(2)}</td>
   </tr>
 </table>
 
@@ -109,7 +109,7 @@
     <td colspan="2">Callback Queue</td>
   </tr>
    <tr>
-    <td colspan="2">console.log(2)</td>
+    <td colspan="2">() => {console.log(2)}</td>
   </tr>
 </table>
 
@@ -133,7 +133,7 @@
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-    <td colspan="2">console.log(2), console.log(4)</td>
+    <td colspan="2">() => {console.log(2)} <br> () => {console.log(4)}</td>
   </tr>
 </table>
 
@@ -151,14 +151,14 @@
     <td>WebAPI</td>
   </tr>
   <tr>
-    <td>console.log(2)</td>
+    <td>() => {console.log(2)}</td>
     <td></td>
   </tr>
   <tr>
     <td colspan="2">Callback Queue</td>
   </tr>
     <tr>
-    <td colspan="2">console.log(4)</td>
+    <td colspan="2">() => {console.log(4)}</td>
   </tr>
 </table>
 
@@ -168,7 +168,7 @@
     <td>WebAPI</td>
   </tr>
   <tr>
-    <td>console.log(4)</td>
+    <td>() => {console.log(4)}</td>
     <td></td>
   </tr>
   <tr>

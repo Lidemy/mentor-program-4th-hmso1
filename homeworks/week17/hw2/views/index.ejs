@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('template/head')%>
+    <style>
+        .card img {
+            width: 500px;
+        }
+        .my-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include('template/navbar')%>
+    <% if (errorMessage && errorMessage.length > 0 ) { %>
+        <div class="alert alert-danger" role="alert">
+          <%= errorMessage %>
+        </div>
+    <% } %>
+    
+    <% if (Object.keys(result).length) { %>
+        <div class="card mx-auto mt-2" style="width: 550px;">
+            <img src="<%= result.url%>" class="card-img-top mx-auto" >
+            <div class="card-body mx-auto">
+                <h5 class="card-title my-text">恭喜你~</h5>
+                <p class="card-text my-text"><%= result.name%></p>
+                <a href="/" class="btn btn-primary">再抽一次</a>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,13 @@
+
+ <nav class="navbar navbar-light bg-light d-flex justify-content-between px-3">
+    <a class="navbar-brand" href="/">抽獎網頁</a>
+    <span>
+        <% if (!username) { %>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="/login">登入</a>
+        <% } else { %>
+            <a class="btn btn-outline-success my-2 my-sm-0 me-2" href="/admin">抽獎後台</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 me-2" href="/add_prize">新增獎項</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="/logout">登出</a>
+        <% } %>
+    </span>
+</nav>

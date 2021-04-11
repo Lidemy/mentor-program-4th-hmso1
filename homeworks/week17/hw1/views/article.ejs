@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <%- include('template/header') %>
+</head>
+
+<body>
+  <%- include('template/navbar') %>
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+  <div class="container-wrapper">
+    <div class="posts">
+      <article class="post">
+        <% if (errorMessage.length > 0) { %>
+          <p style="color:red;">
+            <%= errorMessage %>
+          </p>
+        <% } %>
+        <div class="post__header">
+          <div><%= article.title %></div>
+          <div class="post__actions">
+            <% if (username) { %>
+              <a class="post__action" href="/edit/<%= article.id%>">編輯</a>
+            <% } %>
+          </div>
+        </div>
+        <div class="post__info">
+          <%= article.createdAt.toLocaleString()%>
+        </div>
+        <div class="post__content"><%= article.content %></div>
+        <div class="post__content">分類：<%= article.Category.category %></div>
+      </article>
+    </div>
+  </div>
+  <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+</body>
+</html>

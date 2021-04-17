@@ -7,8 +7,20 @@ MVC 的結構會使程式的職責分得明確，會較容易維護。
 
 ## 請寫下這週部署的心得
 使用 Heroku 去部署十分方便，雖然需要做環境變數的設定，但在 [BE201] 都說明的好清晰。但在部署其間發現有以下問題：
-1. 如果在 XAMPP 開晵的情況下 git push 去 Heroku 會開不到 Database（待測試）
-2. 在 ClearDB 的 timezone 同身處的時區不同（待測試）
+
+1. 如果在 XAMPP 的 MySQL 開晵的情況下 git push 去 Heroku 會開不到 Table
+應該當時設定有問題，之後開住 MySQL 再部署多次到 Heroku 都沒有問題，Table 都成功建立。
+
+2. 在 ClearDB 的 timezone 同身處的時區不同
+要新增 heroku Timezone config：
+`heroku config:add TZ="Asia/Hong_Kong"`
+
+更改或刪除：
+`heroku config:add TZ="America/Argentina/Buenos_Aires"`
+`heroku config:add TZ=""`
+
+檢查 heroku config
+`heroku config:get TZ`
 
 因為今次是在 Heroku 上部署，下次有時間試試租主機。在 Heroku 上 ClearDB 自動設定了環境變數，如果自己租主機是不是會要將 database 的 config 都設定在主機上?
 

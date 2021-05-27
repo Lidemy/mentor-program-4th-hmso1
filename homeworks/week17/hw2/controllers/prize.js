@@ -52,7 +52,7 @@ const prizeController = {
     });
   },
   addPrize: (req, res) => {
-    res.render('add_prize');
+    res.render('add-prize');
   },
   handleAddPrize: (req, res, next) => {
     const { prize, url, weight } = req.body;

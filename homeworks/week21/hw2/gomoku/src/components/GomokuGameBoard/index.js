@@ -1,0 +1,1 @@
+export { GomokuGameBoard } from "./GomokuGameBoard";

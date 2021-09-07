@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <%- include('template/header') %>
+</head>
+
+<body>
+  <%- include('template/navbar') %>
+  <section class="banner">
+    <div class="banner__wrapper">
+      <h1>存放技術之地</h1>
+      <div>Welcome to my blog</div>
+    </div>
+  </section>
+  <div class="container-wrapper">
+    <div class="container">
+      <div class="edit-post">
+        <form action="/add-article" method="POST">
+          <div class="edit-post__title">
+            發表文章：
+          </div>
+          <% if (errorMessage.length > 0) { %>
+            <p style="color:red;">
+              <%= errorMessage %>
+            </p>
+          <% } %>
+          <div class="edit-post__input-wrapper">
+            <input class="edit-post__input" placeholder="請輸入文章標題" name="title" />
+          </div>
+          <div class="edit-post__input-wrapper">
+            <select class="edit-post__input" id="category" name="category">
+              <option value="" selected>請選擇</option>
+              <option value="new">新分類</option>
+              <% if (categories.length > 0) { %>
+                <% categories.forEach((category) => { %>
+                  <option value="<%= category.id %>"><%= category.category %></option>
+                <% }) %>
+              <% } %>
+            </select>
+            <input class="edit-post__input" placeholder="請輸入分類名稱" name="new_category" style="visibility: hidden;"/>
+          </div>
+          <div class="edit-post__input-wrapper">
+            <textarea rows="20" class="edit-post__content" name="content"></textarea>
+          </div>
+          <div class="edit-post__input-wrapper">
+            
+          </div>
+          <div class="edit-post__btn-wrapper">
+            <input type="submit" class="edit-post__btn" value="送出">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>Copyright © 2020 Who's Blog All Rights Reserved.</footer>
+
+  <script>
+    const category = document.getElementById('category')
+    category.addEventListener('change', () => {
+      if (document.querySelector('option:checked').value === 'new') {
+        document.querySelector('input[name="new_category"]').style.visibility = 'visible'
+      } else {
+        document.querySelector('input[name="new_category"]').style.visibility = 'hidden'
+      }
+    })
+
+  </script>
+</body>
+</html>
